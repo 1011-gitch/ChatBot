@@ -72,8 +72,6 @@ function ResponsiveDrawer() {
     "Franchise",
     "Distributor",
     "Contact",
-    "Sign In",
-    "Sign Up"
   ];
   const classes = useStyles();
   const theme = useTheme();
@@ -162,37 +160,19 @@ function ResponsiveDrawer() {
                     Blog
                   </Button>
                 </Link>
-
                 <Link
                   style={{
                     textDecoration: "none",
                     color: "white",
                     marginLeft: 20
                   }}
-                  to="/signIn"
+                  to="/bot"
                 >
                   <Button
                     color="inherit"
                     style={{ fontSize: 20, color: "white", marginLeft: 20 }}
                   >
-                    SIGNIN
-                  </Button>
-                </Link>
-
-
-                <Link
-                  style={{
-                    textDecoration: "none",
-                    color: "white",
-                    marginLeft: 20
-                  }}
-                  to="/signUp"
-                >
-                  <Button
-                    color="inherit"
-                    style={{ fontSize: 20, color: "white", marginLeft: 20 }}
-                  >
-                    SIGNUP
+                    Chatbot
                   </Button>
                 </Link>
               </span>

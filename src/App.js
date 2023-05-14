@@ -1,8 +1,6 @@
 import React from 'react';
 import Home from './components/Home'
 import Header from './components/Header'
-import SignIn from './components/SignIn'
-import SignUp from './components/SignUp'
 import About from './components/About';
 import Blog from './components/Blog'
 import Bot from './components/ChatBot'
@@ -22,8 +20,6 @@ function App() {
           </center>
         </div>
         <Route exact path="/" component={Home} />
-        <Route path="/signIn" component={SignIn} />
-        <Route path="/signUp" component={SignUp} />
         <Route path="/about" component={About} />
         <Route path="/blog" component={Blog} />
         <Route path="/Bot" component={Bot} />

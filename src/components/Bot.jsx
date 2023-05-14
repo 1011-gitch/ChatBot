@@ -141,28 +141,65 @@ function CustomChatbot(props) {
         {
             id: 19,
             message: "Do you want to know about any other crime in the List",
-            trigger: 20
+            trigger: 'crime-details'
         },
+               
         {
+            id: 'crime-details',
+            message: 'Please mention the details of the crime so that we can help accordingly.',
+           
+            trigger: 'response',
+          },
+          {
+            id: 'response',
+        
+            user:true ,
+            trigger: 20,
+          },
+          {
             id: 20,
-            options: [
-                {
-                    value: 1,
-                    label: 'Yes',
-                    trigger: '12'
-                },
-                {
-                    value: 2,
-                    label: 'No',
-                    trigger: '21'
-                }
-            ]
-        },
-        {
+            message: 'Please enter valid Contact Number?',
+            // user:true ,
+           
+            trigger: 'contact',
+           
+          },
+          {
+            id: 'contact',
+            //message: 'What is your Current Address?',
+            user:true ,
+            validator: (value) => {
+              if (isNaN(value)) {
+                return 'Invalid Number.';
+              } else if (value.toString().length !== 10) {
+                return 'Enter valid No.';
+              } 
+
+              return true;
+            },
+            trigger: 21,
+          },
+          {
             id: 21,
-            message: 'bey',
-            end: true
-        }
+            message: 'What is your Current Address?',
+            
+            trigger: 'address',
+          },
+          {
+            id: 'address',
+            user:true ,
+            trigger: 22,
+          },
+          {
+            id: 22,
+            message: 'Great! Check out your summary',
+            trigger: 'end-message',
+          },
+          {
+            id: 'end-message',
+            message: 'Thanks! Your data was submitted successfully! In case of emergency , please dial 9876543210!',
+            end: true,
+          },
     ];
     return <ChatBot
         headerTitle="Chat Bot"
